@@ -13,6 +13,6 @@ struct Quote: Codable {
     var currency:String?
     var readableLastChangePercent:String?
     var last:String?
-    var variationColor:String?
+    var variationColor:String
     var myMarket:Market?
 }
