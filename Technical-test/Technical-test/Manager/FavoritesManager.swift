@@ -10,7 +10,7 @@ import Foundation
 protocol FavoritesManager {
     func add(quote: String)
     func remove(quote: String)
-    func containce(quote: String) -> Bool
+    func contains(quote: String) -> Bool
 }
 
 class DefaultFavoritesManager: FavoritesManager {
@@ -24,7 +24,7 @@ class DefaultFavoritesManager: FavoritesManager {
         favoritesQuotes.remove(quote)
     }
     
-    func containce(quote: String) -> Bool {
-        favoritesQuotes.contains(quote) ? true : false
+    func contains(quote: String) -> Bool {
+        favoritesQuotes.contains(quote)
     }
 }

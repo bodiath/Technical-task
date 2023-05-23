@@ -68,7 +68,7 @@ extension QuotesListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: QuotesTableViewCell.reuseIdentifier, for: indexPath) as! QuotesTableViewCell
         
-        let isFavorite = favoritesManager.containce(quote: quotes[indexPath.row].name)
+        let isFavorite = favoritesManager.contains(quote: quotes[indexPath.row].name)
         
         cell.setupCell(quote: self.quotes[indexPath.row], isFavorite: isFavorite)
         

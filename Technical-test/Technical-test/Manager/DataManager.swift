@@ -29,7 +29,6 @@ class DataManager {
         }
         return url
     }
-    
 
     func fetchQuotes(completion: @escaping (Result<[Quote], NetworkError>) -> Void) {
         let request = URLRequest(url: url)
