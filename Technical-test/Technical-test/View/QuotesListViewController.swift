@@ -12,4 +12,12 @@ class QuotesListViewController: UIViewController {
     private let dataManager:DataManager = DataManager()
     private var market:Market? = nil
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        dataManager.fetchQuotes { result in
+            print(result)
+        }
+        self.view.backgroundColor = .white
+    }
+    
 }
