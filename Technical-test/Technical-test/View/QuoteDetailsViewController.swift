@@ -10,6 +10,7 @@ import UIKit
 class QuoteDetailsViewController: UIViewController {
     
     private var quote:Quote? = nil
+    private let favoritesManager: FavoritesManager
     
     let symbolLabel = UILabel()
     let nameLabel = UILabel()
@@ -21,9 +22,10 @@ class QuoteDetailsViewController: UIViewController {
     
     
     
-    init(quote:Quote) {
-        super.init(nibName: nil, bundle: nil)
+    init(quote:Quote, favoritesManager: FavoritesManager) {
         self.quote = quote
+        self.favoritesManager = favoritesManager
+        super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder: NSCoder) {
@@ -129,6 +131,7 @@ class QuoteDetailsViewController: UIViewController {
     
     
     @objc func didPressFavoriteButton(_ sender:UIButton!) {
-        // TODO
+        guard let name = self.quote?.name else {return}
+        favoritesManager.add(quote: name)
     }
 }

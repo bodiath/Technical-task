@@ -9,7 +9,7 @@ import Foundation
 
 struct Quote: Codable {
     var symbol:String?
-    var name:String?
+    var name:String
     var currency:String?
     var readableLastChangePercent:String?
     var last:String?
